@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <!-- why  -->
+  <!-- 解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性 。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。 -->
+
+  <style>
+    .box-webkit {
+      display: flex;
+    }
+    .diretion {
+      display: flex;
+      /* flex-direction: row; */
+      flex-direction: row-reverse;
+    }
+    .item {
+      padding: 20px;
+    }
+    .wrap {
+      display: flex;
+      /* flex-wrap: nowrap; */
+      flex-wrap: wrap;
+    }
+    .justify-content {
+      display: flex;
+      /* justify-content: flex-end; */
+      /* justify-content: space-between; */
+      justify-content: space-around;
+    }
+    .justify-content .item:nth-child(2) {
+      width: 100px;
+      background: #4483ff;
+    }
+    .align-items {
+      display: flex;
+      /* align-items: flex-start; */
+      align-items: baseline;
+      height: 100px;
+    }
+    .align-items .item:nth-child(1) {
+      /* height: 50px; */
+      background: #448aff;
+    }
+    .align-items .item:nth-child(2) {
+      /* height: 80px; */
+      background: pink;
+      padding: 10px;
+    }
+    .order {
+      display: flex;
+    }
+    .order .item0 {
+      order: 0;
+    }
+    .order .item1 {
+      order: 1;
+    }
+    .order .item2 {
+      order: 2;
+    }
+    .order .item3 {
+      order: 3;
+    }
+    .order .item4 {
+      order: 4;
+    }
+
+    .grow {
+      display: flex;
+    }
+    .grow .item {
+      flex-grow: 1;
+    }
+    .grow .item:nth-child(2) {
+      flex-grow: 2;
+    }
+
+    .basis {
+      display: flex;
+    }
+    .basis .item {
+      /* flex-basis: auto; */
+      flex-basis: 100px;
+    }
+
+    .align-self {
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <!-- what -->
+  <!-- Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。 -->
+
+  <div class="box-webkit">
+    <p>webkit</p>
+  </div>
+
+  <hr>
+  <h3>direction</h3>
+  <div class="diretion">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>
+  <div class="wrap">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+  </div>
+  <div class="justify-content">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>
+  <div class="align-items">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>
+
+  <hr>
+  <div class="order">
+    <div class="item item1">5</div>
+    <div class="item item4">3</div>
+    <div class="item item2">1</div>
+    <div class="item item0">0</div>
+    <div class="item item3">2</div>
+  </div>
+
+  <div class="grow">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>
+
+  <div class="basis">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>
+
+  <div class="align-items">
+    <div class="item">item1</div>
+    <div class="item align-self">item2</div>
+    <div class="item">item3</div>
+  </div>
+</body>
+</html>
